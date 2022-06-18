@@ -71,10 +71,7 @@ print(sel_df)
 
 conn.close()
 
-
+#can show a exponencial function
 df.plot(kind="scatter",x="date",y="revenue")
 
-import matplotlib.pyplot as plt
-df.hist(bins=50, figsize=(15,15))
-plt.show()
 
