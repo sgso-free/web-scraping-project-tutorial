@@ -50,7 +50,9 @@ df = pd.DataFrame.from_records(dataValues)
 #quito vacios
 df=df[df["revenue"] != ""]
 
-
+#change type
+df['date'] = df['date'].astype('datetime64')
+df['revenue'] = df['revenue'].astype('int64')
 
 ###### STEP DATABASE #########
 
@@ -70,4 +72,9 @@ print(sel_df)
 conn.close()
 
 
-df.plot(kind="scatter")
+df.plot(kind="scatter",x="date",y="revenue")
+
+import matplotlib.pyplot as plt
+df.hist(bins=50, figsize=(15,15))
+plt.show()
+
